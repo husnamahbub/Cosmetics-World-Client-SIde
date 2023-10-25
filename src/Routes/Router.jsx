@@ -9,6 +9,7 @@ import UpdateCosmetics from "../Pages/UpdateCosmetics/UpdateCosmetics";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Page404 from "./Page404";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addProducts',
-                element: <AddProducts></AddProducts>
+                element: <PrivateRoute><AddProducts></AddProducts></PrivateRoute>
             },
             {
              path: '/login',
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myCarts',
-                element: <MyCart></MyCart>,
+                element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
                 loader: () => fetch("http://localhost:5000/selectCart")
             },
             {
@@ -47,13 +48,13 @@ const router = createBrowserRouter([
             },
             {
                 path: '/details/:id',
-                element: <CosmeticsDetails></CosmeticsDetails>,
+                element: <PrivateRoute><CosmeticsDetails></CosmeticsDetails></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/addCosmetics/${params.id}`)
 
             },
             {
                 path: '/updateCosmetics/:id',
-                element: <UpdateCosmetics></UpdateCosmetics>,
+                element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/addCosmetics/${params.id}`)
 
             }
