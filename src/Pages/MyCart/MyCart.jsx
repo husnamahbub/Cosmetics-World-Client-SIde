@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 const MyCart = () => {
     const selectData = useLoaderData()
-    console.log(selectData);
+
     const [users, setUsers] = useState(selectData)
     const handleDelete = _id => {
 
