@@ -8,12 +8,14 @@ import CosmeticsDetails from "../Pages/CosmeticsBrandsProducts/CosmeticsDetails"
 import UpdateCosmetics from "../Pages/UpdateCosmetics/UpdateCosmetics";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import Page404 from "./Page404";
 
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <Page404></Page404>,
         children: [
             {
                 path: '/',
