@@ -55,7 +55,7 @@ const Navbar = () => {
     <img className="w-14" src="https://www.zarla.com/images/zarla-plumpd-1x1-2400x2400-20211026-6yq7vmhkg3hmr4r46yy3.png?crop=1:1,smart&width=250&dpr=2" alt="" />
     <a className="btn btn-ghost normal-case text-xl">Cosmetics World</a>
   </div>
-  <div className="navbar-center">
+  <div className="navbar-center hidden lg:flex">
     {
           <div className="flex items-center gap-3 mr-3">
           <img className="w-10 rounded-lg" src={user?.photoURL} alt="" />
