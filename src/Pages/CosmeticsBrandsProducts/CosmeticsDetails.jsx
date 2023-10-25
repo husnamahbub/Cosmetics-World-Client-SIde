@@ -6,7 +6,7 @@ const CosmeticsDetails = () => {
     const detailsData = useLoaderData()
     const handleAddCart = () => {
      
-    fetch(`http://localhost:5000/selectCart`, {
+    fetch(`https://my-assignment-server-side.vercel.app/selectCart`, {
         method: 'POST',
         headers: {
            'content-type': 'application/json'

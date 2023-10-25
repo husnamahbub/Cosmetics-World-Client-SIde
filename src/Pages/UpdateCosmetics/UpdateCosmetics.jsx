@@ -61,7 +61,7 @@ const UpdateCosmetics = () => {
             />
           </div>
           <div>
-            <h3 className="font-bold text-xl mb-5">Name</h3>
+            <h3 className="font-bold text-xl mb-6">Name</h3>
             <input
               type="text"
               name="name"
