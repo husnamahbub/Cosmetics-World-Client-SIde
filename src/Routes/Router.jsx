@@ -6,6 +6,8 @@ import MyCart from "../Pages/MyCart/MyCart";
 import CosmeticsBrandsProducts from "../Pages/CosmeticsBrandsProducts/CosmeticsBrandsProducts";
 import CosmeticsDetails from "../Pages/CosmeticsBrandsProducts/CosmeticsDetails";
 import UpdateCosmetics from "../Pages/UpdateCosmetics/UpdateCosmetics";
+import Login from "../Pages/Login/Login";
+import Register from "../Pages/Register/Register";
 
 
 const router = createBrowserRouter([
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
             {
                 path: '/addProducts',
                 element: <AddProducts></AddProducts>
+            },
+            {
+             path: '/login',
+             element: <Login></Login>
+            },
+            {
+            path: '/register',
+            element: <Register></Register>
             },
             {
                 path: '/myCarts',

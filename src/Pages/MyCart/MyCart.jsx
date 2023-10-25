@@ -1,15 +1,34 @@
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 const MyCart = () => {
     const selectData = useLoaderData()
     console.log(selectData);
-    return (
+    const [users, setUsers] = useState(selectData)
+    const handleDelete = _id => {
+
+         fetch(`http://localhost:5000/selectCart/${_id}`, {
+             method: "DELETE"
+            
+         })
+         .then(res => res.json())
+         .then(data => {
+             console.log(data);
+             if(data.deletedCount > 0) {
+            toast.success("the cart is delete successfully")
+           const remainingUser = users.filter(user => user._id !== _id)
+           setUsers(remainingUser)
+            }
+         })
+        }
+ return (
      <div>
         <Navbar></Navbar>
            <div className="grid lg:grid-cols-3 grid-cols-1 mt-20  lg:ml-20">
           {
-            selectData.map(cart => <div key={cart._id}>
+            users.map(cart => <div key={cart._id}>
                 <div className="card lg:w-96 w-80 bg-base-100 shadow-xl">
             <figure><img className="h-52" src={cart.photo} alt="Shoes" /></figure>
             <div className="card-body">
@@ -20,7 +39,7 @@ const MyCart = () => {
               <p className="font-bold">{cart.category}</p>
               <p className="font-bold">{cart.details}</p>
               <div className="card-actions justify-end">
-                <button  className="btn text-white bg-red-300 rounded-lg">Delete</button>
+                <button onClick={() => handleDelete(cart._id)}  className="btn text-white bg-red-300 rounded-lg">Delete</button>
                
               </div>
             </div>
@@ -28,6 +47,7 @@ const MyCart = () => {
                </div>)
           }
         </div>
+        <ToastContainer/>
      </div>
     );
 };

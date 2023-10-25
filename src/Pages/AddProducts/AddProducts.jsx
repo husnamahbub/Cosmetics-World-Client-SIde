@@ -1,3 +1,4 @@
+import { ToastContainer, toast } from "react-toastify";
 import Navbar from "../Shared/Navbar/Navbar";
 
 const AddProducts = () => {
@@ -28,7 +29,7 @@ const AddProducts = () => {
             .then(data => {
                 console.log(data);
                 if(data.insertedId){
-                 alert("ok")
+                toast.success("add the data is successfully")
                 }
             })
     }
@@ -143,6 +144,7 @@ const AddProducts = () => {
     </form>
    </div>
   </div>
+  <ToastContainer></ToastContainer>
    </div>
     );
 };
