@@ -5,6 +5,7 @@ import AddProducts from "../Pages/AddProducts/AddProducts";
 import MyCart from "../Pages/MyCart/MyCart";
 import CosmeticsBrandsProducts from "../Pages/CosmeticsBrandsProducts/CosmeticsBrandsProducts";
 import CosmeticsDetails from "../Pages/CosmeticsBrandsProducts/CosmeticsDetails";
+import UpdateCosmetics from "../Pages/UpdateCosmetics/UpdateCosmetics";
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,12 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <CosmeticsDetails></CosmeticsDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/addCosmetics/${params.id}`)
+
+            },
+            {
+                path: '/updateCosmetics/:id',
+                element: <UpdateCosmetics></UpdateCosmetics>,
                 loader: ({params}) => fetch(`http://localhost:5000/addCosmetics/${params.id}`)
 
             }

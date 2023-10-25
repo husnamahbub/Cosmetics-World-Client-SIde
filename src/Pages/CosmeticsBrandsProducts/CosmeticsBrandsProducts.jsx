@@ -42,7 +42,7 @@ const CosmeticsBrandsProducts = () => {
 
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-y-20 mt-20 lg:ml-20">
         {
-            brandData.map(card => <Link to={`/details/${card._id}`} key={card._id}><div className="card w-80 bg-base-100 shadow-xl">
+            brandData.map(card => <div key={card._id}><div className="card w-80 bg-base-100 shadow-xl">
             <figure><img className="h-52" src={card.photo} alt="Shoes" /></figure>
             <div className="card-body">
               <h2 className="card-title">{card.name}</h2>
@@ -51,11 +51,11 @@ const CosmeticsBrandsProducts = () => {
               <p className="font-bold">${card.price}</p>
               <p className="font-bold">{card.category}</p>
               <div className="card-actions justify-end">
-                <button className="btn text-white bg-orange-300 rounded-lg">Update</button>
-                <button className="btn text-white bg-orange-300 rounded-lg">Details</button>
+                <Link  to={`/updateCosmetics/${card._id}`} className="btn text-white bg-orange-300 rounded-lg">Update</Link>
+                <Link to={`/details/${card._id}`}  className="btn text-white bg-orange-300 rounded-lg">Details</Link>
               </div>
             </div>
-          </div></Link>)
+          </div></div>)
           }
         </div>
          </div>
