@@ -24,7 +24,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myCarts',
-                element: <MyCart></MyCart>
+                element: <MyCart></MyCart>,
+                loader: () => fetch("http://localhost:5000/selectCart")
             },
             {
                 path: '/cosmeticsBrands/:brand',
