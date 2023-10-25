@@ -21,7 +21,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/cosmeticsBands')
+                loader: () => fetch('https://my-assignment-server-side.vercel.app/cosmeticsBands')
             },
             {
                 path: '/addProducts',
@@ -38,24 +38,24 @@ const router = createBrowserRouter([
             {
                 path: '/myCarts',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader: () => fetch("http://localhost:5000/selectCart")
+                loader: () => fetch("https://my-assignment-server-side.vercel.app/selectCart")
             },
             {
                 path: '/cosmeticsBrands/:brand',
                 element: <CosmeticsBrandsProducts></CosmeticsBrandsProducts>,
-                loader: ({params}) => fetch(`http://localhost:5000/cosmetics/${params.brand}`)
+                loader: ({params}) => fetch(`https://my-assignment-server-side.vercel.app/cosmetics/${params.brand}`)
 
             },
             {
                 path: '/details/:id',
                 element: <PrivateRoute><CosmeticsDetails></CosmeticsDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/addCosmetics/${params.id}`)
+                loader: ({params}) => fetch(`https://my-assignment-server-side.vercel.app/addCosmetics/${params.id}`)
 
             },
             {
                 path: '/updateCosmetics/:id',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/addCosmetics/${params.id}`)
+                loader: ({params}) => fetch(`https://my-assignment-server-side.vercel.app/addCosmetics/${params.id}`)
 
             }
         ]

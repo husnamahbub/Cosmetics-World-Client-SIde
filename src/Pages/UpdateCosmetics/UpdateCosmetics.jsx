@@ -21,7 +21,7 @@ const UpdateCosmetics = () => {
         const newCosmetics = { name, brand,  rating, price, category, details, photo }
 
         // send data to the server
-        fetch(`http://localhost:5000/addCosmetics/${_id}`, {
+        fetch(`https://my-assignment-server-side.vercel.app/addCosmetics/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

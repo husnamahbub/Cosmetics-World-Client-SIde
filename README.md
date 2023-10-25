@@ -12,9 +12,15 @@ Website Name:Wedding Ceremony Website Link:
 the projects features:
 
 #.Component-Based Architecture
+
 #.State Management
+
 #.Conditional Rendering
+
 #.Routing
+
 #.Form Handling
+
 #.Server-Side Rendering
+
 #.Error Boundaries

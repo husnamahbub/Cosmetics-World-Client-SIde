@@ -9,7 +9,7 @@ const MyCart = () => {
     const [users, setUsers] = useState(selectData)
     const handleDelete = _id => {
 
-         fetch(`http://localhost:5000/selectCart/${_id}`, {
+         fetch(`https://my-assignment-server-side.vercel.app/selectCart/${_id}`, {
              method: "DELETE"
             
          })

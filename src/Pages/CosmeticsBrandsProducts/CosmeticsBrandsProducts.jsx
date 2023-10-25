@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
+import { ToastContainer, toast } from "react-toastify";
 
 
 const CosmeticsBrandsProducts = () => {
@@ -42,6 +43,11 @@ const CosmeticsBrandsProducts = () => {
 
         <div className="grid lg:grid-cols-3 grid-cols-1 gap-y-20 mt-20 lg:ml-20">
         {
+          brandData.length === 0 ?
+          toast.error("there is no data here",{
+            position: "top-center"
+          })
+          :
             brandData.map(card => <div key={card._id}><div className="card w-80 bg-base-100 shadow-xl">
             <figure><img className="h-52" src={card.photo} alt="Shoes" /></figure>
             <div className="card-body">
@@ -59,6 +65,7 @@ const CosmeticsBrandsProducts = () => {
           }
         </div>
          </div>
+         <ToastContainer/>
         </div>
     );
 };
